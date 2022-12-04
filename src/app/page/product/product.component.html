@@ -1,0 +1,25 @@
+<div class="content">
+  <app-navbar></app-navbar>
+
+  <div class="mx-2">
+    <div class="w-56 bg-white h-full fixed z-10 -ml-1 px-5 pt-14">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="ml-56 bg-slate-100 pl-6 -mr-2 h-full">
+      <div class="flex flex-wrap">
+        <div
+          class="w-60 h-40 rounded-md border-2 border-red-200 m-3"
+          *ngFor="let product of products"
+        >
+          <img src="./assets/image/telkom.png" class="w-36 h-20" />
+          <div class="font-mono ml-4">{{ product.name }}</div>
+          <div class="font-mono ml-4">{{ product.price }}</div>
+
+          <button class="w-24 h-8 bg-blue-200 rounded-sm ml-32 mt-3">
+            Detail
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
