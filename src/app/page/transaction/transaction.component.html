@@ -1,5 +1,17 @@
 <div class="content">
   <app-navbar></app-navbar>
+  <div class="flex justify-end items-end space-x-2 mr-8 bg-white">
+    <button
+      class="flex items-center text-sm space-x-2 border-2 py-2 px-2 rounded-lg text-gray-500"
+    >
+      <span>Filter</span>
+    </button>
+
+    <input
+      class="flex items-center text-sm space-x-2 border-2 py-2 px-2 rounded-lg"
+      placeholder="Search hire"
+    />
+  </div>
 
   <div class="mx-2">
     <div class="w-56 bg-white h-full fixed z-10 -ml-1 px-5 pt-14">
@@ -17,33 +29,26 @@
               <tr>
                 <th scope="col" class="py-3 px-6">Product name</th>
                 <th scope="col" class="py-3 px-6">Price</th>
-                <th scope="col" class="py-3 px-6">Description</th>
+                <th scope="col" class="py-3 px-6">Category</th>
+                <th scope="col" class="py-3 px-6">Status</th>
               </tr>
             </thead>
             <tbody>
               <tr
                 class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                *ngFor="let transaction of transactions"
               >
                 <th
                   scope="row"
                   class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
                 >
-                  Telkomsel 5Ribu
+                  {{ transaction.product_name }}
                 </th>
-                <td class="py-4 px-6">10.000</td>
-                <td class="py-4 px-6">Berhasil</td>
-              </tr>
-              <tr
-                class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-              >
-                <th
-                  scope="row"
-                  class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
-                >
-                  Telkomsel 10Ribu
-                </th>
-                <td class="py-4 px-6">5000</td>
-                <td class="py-4 px-6">Berhasil</td>
+                <td class="py-4 px-6">
+                  Rp{{ formatPrices(transaction.price) }}
+                </td>
+                <td class="py-4 px-6">{{ transaction.category }}</td>
+                <td class="py-4 px-6">{{ transaction.status }}</td>
               </tr>
             </tbody>
           </table>

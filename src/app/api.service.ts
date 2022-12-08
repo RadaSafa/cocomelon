@@ -33,4 +33,27 @@ export class ApiService {
       requestOptions
     );
   }
+
+  getTransaction() {
+    return this.http.get(
+      'https://api.garar.id/v1/transaction/prepaid',
+      requestOptions
+    );
+  }
+
+  getTransactionBuy() {
+    return this.http.get(
+      'https://api.garar.id/v1/transaction/pasca',
+      requestOptions
+    );
+  }
+
+  buy(body: any) {
+    return this.http.post(
+      'https://api.garar.id/v1/transaction/prepaid',
+
+      body,
+      requestOptions
+    );
+  }
 }

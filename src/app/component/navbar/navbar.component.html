@@ -4,7 +4,8 @@
   <div>
     <a href="" class="flex">
       <img src="./assets/image/cocomelon.png" class="w-20 h-16" />
-      <span class="flex justify-center items-center text-3xl ml-2 font-bold"
+      <span
+        class="flex justify-center items-center text-3xl ml-2 font-bold text-green-500"
         >Cocomelon</span
       >
     </a>
@@ -15,17 +16,17 @@
       <div class="flex bg-white py-1 px-3 justify-between space-x-2">
         <div>
           <img
-            class="rounded-full"
-            src="https://i.ibb.co/L1LQtBm/Ellipse-1.png"
+            src="./assets/image/cocomelon.png"
+            class="w-12 h-10"
             alt="avatar"
           />
         </div>
         <div class="flex justify-start flex-col items-start">
           <h3 class="cursor-pointer text-sm leading-5 font-bold">
-            Alexis Enache
+            {{ user.name }}
           </h3>
           <p class="cursor-pointer text-xs leading-3 text-gray-500">
-            alexis81@gmail.com
+            {{ user.phone }}
           </p>
         </div>
       </div>

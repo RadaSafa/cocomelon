@@ -13,6 +13,7 @@ import { LoginComponent } from './page/login/login.component';
 import { TransactionComponent } from './page/transaction/transaction.component';
 import { ProductComponent } from './page/product/product.component';
 import { MainDashboardComponent } from './page/main-dashboard/main-dashboard.component';
+import { BuyComponent } from './page/buy/buy.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { MainDashboardComponent } from './page/main-dashboard/main-dashboard.com
     TransactionComponent,
     ProductComponent,
     MainDashboardComponent,
+    BuyComponent,
   ],
   imports: [
     BrowserModule,

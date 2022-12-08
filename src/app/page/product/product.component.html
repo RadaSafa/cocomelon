@@ -8,15 +8,19 @@
     <div class="ml-56 bg-slate-100 pl-6 -mr-2 h-full">
       <div class="flex flex-wrap">
         <div
-          class="w-60 h-40 rounded-md border-2 border-red-200 m-3"
+          class="w-60 h-52 rounded-md border-2 border-red-200 m-3"
           *ngFor="let product of products"
         >
           <img src="./assets/image/telkom.png" class="w-36 h-20" />
           <div class="font-mono ml-4">{{ product.name }}</div>
-          <div class="font-mono ml-4">{{ product.price }}</div>
+          <div class="font-mono ml-4">Rp{{ formatPrices(product.price) }}</div>
+          <div class="font-mono ml-4 mt-3">{{ product.status }}</div>
 
-          <button class="w-24 h-8 bg-blue-200 rounded-sm ml-32 mt-3">
-            Detail
+          <button
+            class="w-24 h-8 bg-blue-200 rounded-sm ml-32 mt-3"
+            (click)="onBuy(product)"
+          >
+            Buy
           </button>
         </div>
       </div>

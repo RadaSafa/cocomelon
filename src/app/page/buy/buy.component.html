@@ -1,0 +1,59 @@
+<div class="content">
+  <app-navbar></app-navbar>
+
+  <div class="mx-2">
+    <div class="w-56 bg-white h-full fixed z-10 -ml-1 px-5 pt-14">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="ml-56 bg-slate-100 -mr-2 h-full mr-8">
+      <div class="w-60 h-32 rounded-md m-3">
+        <img src="./assets/image/telkom.png" class="w-20 h-16" />
+        <div class="font-mono ml-4">{{ product.name }}</div>
+        <div class="font-mono ml-4">{{ product.price }}</div>
+        <div class="font-mono ml-4 mt-3">{{ product.status }}</div>
+      </div>
+
+      <form class="p-8" (ngSubmit)="onSubmit()">
+        <div class="form-group mb-6">
+          <label
+            for="exampleInputEmail1"
+            class="form-label inline-block mb-2 text-gray-700"
+            >Masukkan TELEPON</label
+          >
+          <input
+            type="phone"
+            name="customer_number"
+            class="form-control block w-96 px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+            id="exampleInputEmail1"
+            aria-describedby="emailHelp"
+            placeholder="Enter phone"
+            [(ngModel)]="model.customer_number"
+          />
+        </div>
+
+        <div class="w-full bg-black my-5" style="height: 1px"></div>
+        <div class="flex justify-between">
+          <div>Informasi Saldo</div>
+          <div class="font-bold">{{ user.balance }}</div>
+        </div>
+        <div class="w-full bg-black my-5" style="height: 1px"></div>
+        <div class="flex justify-between">
+          <div>Admin Fee</div>
+          <div>{{ user.adminFeePulsa }}</div>
+        </div>
+        <div class="w-full bg-black my-5" style="height: 1px"></div>
+        <div class="flex justify-between">
+          <div>Total</div>
+          <div>{{ totalPrice }}</div>
+        </div>
+
+        <button
+          type="submit"
+          class="px-6 mt-10 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
